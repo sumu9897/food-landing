@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import "./globals.css";
 import ResponsiveNavbar from "@/components/Helper/Home/Navbar/ResponsiveNavbar";
+import Provider from "@/components/HOC/Provider";
 
 const font = Manrope({
   weight: ['200','300','400', '500','600', '700', '800'],
@@ -30,12 +31,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${font.className} antialiased`}
       >
+        <Provider>
         <ResponsiveNavbar/>
         {children}
+        </Provider>
       </body>
     </html>
   );
