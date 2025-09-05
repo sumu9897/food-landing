@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 // import { Geist, Geist_Mono } from "next/font/google";
 import { Manrope } from "next/font/google";
 import "./globals.css";
+import ResponsiveNavbar from "@/components/Helper/Home/Navbar/ResponsiveNavbar";
 
 const font = Manrope({
   weight: ['200','300','400', '500','600', '700', '800'],
@@ -33,6 +34,7 @@ export default function RootLayout({
       <body
         className={`${font.className} antialiased`}
       >
+        <ResponsiveNavbar/>
         {children}
       </body>
     </html>
